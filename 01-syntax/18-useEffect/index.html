@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Create React App</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const { useState, useEffect } = React
+
+      function App() {
+        const [price, setPrice] = useState(0)
+        const [money, setMoney] = useState(10)
+        const [errorMessage, setErrorMessage] = useState(null)
+
+        function increasePrice() {
+          setPrice(price + 1)
+        }
+
+        function decreasePrice() {
+          setPrice(price - 1)
+        }
+
+        // no array: run after every single render
+        // empty array: run only once (initial render)
+        // not an empty array: run after initial render, and every time if dependency changed
+        useEffect(() => {
+          setErrorMessage(price > money ? 'You do not have enough money' : null)
+        }, [price])
+
+        const formattedPrice = new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'EUR',
+        }).format(price)
+
+        return (
+          <>
+            <h1>Price/Money calculator</h1>
+            <div>
+              <button onClick={decreasePrice}>-</button>
+              <span>{formattedPrice}</span>
+              <button onClick={increasePrice}>+</button>
+              {errorMessage && <p className="error">{errorMessage}</p>}
+            </div>
+          </>
+        )
+      }
+
+      // const container = document.querySelector('#root')
+      // const root = ReactDOM.createRoot(container)
+      const root = ReactDOM.createRoot(document.querySelector('#root'))
+      root.render(<App />)
+    </script>
+  </body>
+</html>
