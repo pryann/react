@@ -1,0 +1,22 @@
+.nav {
+  background: var(--dark);
+}
+
+.nav__list {
+  margin: 0;
+  padding: 1rem 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__item {
+  padding: 0 1rem;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
