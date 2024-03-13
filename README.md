@@ -68,3 +68,17 @@
   `componentDidCatch(error, info)`: Ez a metódus a komponens gyermek komponenseiben keletkezett hibák elkapására szolgál. Hasznos lehet a hibák naplózására és a felhasználóbarát hibaüzenetek megjelenítésére.
   ![React 16.3 lifecycle methods](/img/lifecycle-methods16-3.jpg)
   ![lifecycle hooks](/img/react-lifecycle-methods-in-hooks.jpeg)
+
+## State management
+
+**Context API**  
+A Context API lehetővé teszi az adatok vagy funkciók globális elérését az alkalmazás különböző részein keresztül, 
+anélkül, hogy azokat minden komponens átadná.
+
+**Provider komponens**:  
+A Provider komponens szolgáltatja a Context API-ban definiált értékeket, így azok hozzáférhetőek lesznek az alkalmazás más részein. 
+A kontextus értékeit biztosítja a leszármazott komponenseknek, akik pedig feliratkozhatnak a kontextus változásaira.
+
+**useContext hook**:
+Lehetőséget biztosít a kontextushoz való rugalmas hozzáférésre és módosításra.
+

@@ -1,0 +1,42 @@
+:root {
+  --dark: #213547;
+  --light: #fefefe;
+  --green: #069e10;
+  --red: #ba0101;
+  --orange: #eab410;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark);
+  background: var(--light);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--green);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-red {
+  color: var(--red);
+}
+
+.text-green {
+  color: var(--green);
+}
+
+.text-orange {
+  color: var(--orange);
+}
