@@ -8,11 +8,6 @@ SearcBar.propTypes = {
 export default function SearcBar({ onSearchVideos }) {
   const [query, setQuery] = useState('')
 
-  // function onChange(event) {
-  //   const {value} = event.target
-  //   setQuery(value)
-  // }
-
   function handleSubmit(event) {
     event.preventDefault()
     onSearchVideos(query)

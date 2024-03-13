@@ -4,7 +4,7 @@ const YOUTUBE_API_KEY = 'AIzaSyCw1Uc6MWnDG8-8G-wDKqfMpl3kiaqgCuo'
 
 export const defaultParams = {
   part: 'snippet',
-  maxResult: 12,
+  maxResults: 12,
   key: YOUTUBE_API_KEY,
 }
 
